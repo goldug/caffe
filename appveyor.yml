@@ -88,7 +88,6 @@ install:
   - ps: Install-Product node $env:nodejs_version
   # install modules
   - npm install -g --production windows-build-tools
-  - ps: [Environment]::SetEnvironmentVariable("VCTargetsPath", "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140", "Machine")
 
 build_script:
 - cmd: >-
