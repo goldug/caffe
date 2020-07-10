@@ -1,6 +1,8 @@
 version: 1.0.{build}
 clone_folder: c:\projects\caffe
 environment:
+  APPVEYOR_SSH_KEY: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAwQ1GiEcwrP6lkJPh380v/rUPdgx3SqIUzjGEApmfbjgyskts8Cs3vIsIphh2OgjxdLdDRVj3fa47QxUrfG4il5oUgYJAMTXFC0rI9Yii44HHcWPAXNMbDvq8B3sBrEDm3mLFaDtzOJKTn1759tAKPv6GCl+NtebuFcWvfJjSDa0Z+GXfsnND1dQYG46DJEsg3KHFwaEx5AS547eM+QpLhOl7tVoD+UlDHBeUFtOPw1wOjkC9g2DxeWCLcfehUhuJgFtrIpy/2mDsoMZQ5F4Zc3hko2j9xhI5XmtB5aJZUIUL7MMcbWigP4gkrpfqlK59VddbtXjG6HjUGcqmsXLy4w==
+
   matrix:
     - MSVC_VERSION: 14
       WITH_NINJA: 0
