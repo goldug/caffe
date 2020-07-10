@@ -78,8 +78,7 @@ environment:
       CMAKE_BUILD_SHARED_LIBS: 0
       PYTHON_VERSION: 2
       WITH_CUDA: 0
-# Test against the latest version of this Node.js version
-  nodejs_version: "6"
+
 # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of Node.js or io.js
