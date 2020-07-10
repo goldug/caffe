@@ -78,6 +78,9 @@ environment:
       CMAKE_BUILD_SHARED_LIBS: 0
       PYTHON_VERSION: 2
       WITH_CUDA: 0
+  
+init:
+  - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
 
 # Install scripts. (runs after repo cloning)
 install:
@@ -85,6 +88,7 @@ install:
   - ps: Install-Product node $env:nodejs_version
   # install modules
   - npm install -g --production windows-build-tools
+  - ps: [Environment]::SetEnvironmentVariable("VCTargetsPath", "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140", "Machine")
 
 build_script:
 - cmd: >-
@@ -93,3 +97,7 @@ build_script:
 artifacts:
   - path: build\install
     name: caffe
+    
+on_finish:
+  - sh: export APPVEYOR_SSH_BLOCK=true
+  - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
